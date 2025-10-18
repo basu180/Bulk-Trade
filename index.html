@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BULK Exchange — Quiz (5 Qs)</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#00d1b2;--muted:#9aa6b2;--white:#e6eef6}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:linear-gradient(180deg,#061021 0%, #0b1020 100%); color:var(--white); margin:0; padding:32px}
+    .container{max-width:840px;margin:0 auto}
+    header{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+    h1{font-size:20px;margin:0}
+    p.lead{color:var(--muted);margin:6px 0 0}
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 6px 24px rgba(2,6,23,0.6)}
+    .question{padding:14px;border-radius:8px;margin-bottom:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
+    .q-title{font-weight:600}
+    .options{margin-top:10px;display:flex;flex-direction:column;gap:8px}
+    label.opt{display:flex;align-items:flex-start;gap:10px;padding:8px;border-radius:8px;cursor:pointer}
+    input[type=radio]{margin-top:4px}
+    .actions{display:flex;gap:8px;margin-top:16px}
+    button{background:var(--accent);border:none;padding:10px 14px;border-radius:8px;color:#042423;font-weight:700;cursor:pointer}
+    button.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white)}
+    .result{margin-top:14px;padding:12px;border-radius:8px;background:rgba(255,255,255,0.02)}
+    .correct{color:#7ef7d6;font-weight:700}
+    .incorrect{color:#ff9aa2;font-weight:700}
+    .answer-key{margin-top:12px;color:var(--muted);font-size:14px}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    @media (max-width:600px){body{padding:16px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>BULK Exchange — Quick Quiz (5 questions)</h1>
+        <p class="lead">Based on the provided BULK article. Select the best answer and click <strong>Submit Answers</strong>.</p>
+      </div>
+    </header>
+
+    <main class="card" id="quiz">
+
+      <!-- Q1 -->
+      <div class="question" data-question="1" data-correct="B">
+        <div class="q-title">1. What is the main purpose of BULK?</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q1" value="A"> A) To replace Solana with a faster blockchain</label>
+          <label class="opt"><input type="radio" name="q1" value="B"> B) To provide a specialized trading execution layer integrated with Solana</label>
+          <label class="opt"><input type="radio" name="q1" value="C"> C) To create a bridge between different blockchains</label>
+          <label class="opt"><input type="radio" name="q1" value="D"> D) To build a centralized trading exchange</label>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="question" data-question="2" data-correct="C">
+        <div class="q-title">2. What makes BULK’s trading performance unique?</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q2" value="A"> A) It processes transactions through a separate blockchain</label>
+          <label class="opt"><input type="radio" name="q2" value="B"> B) It uses external sequencers for faster matching</label>
+          <label class="opt"><input type="radio" name="q2" value="C"> C) It bypasses the general L1 transaction queue with Bulk Tile</label>
+          <label class="opt"><input type="radio" name="q2" value="D"> D) It uses gas fees to prioritize transactions</label>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="question" data-question="3" data-correct="B">
+        <div class="q-title">3. How does BULK ensure fair and gasless orders?</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q3" value="A"> A) By allowing users to pay higher fees for priority</label>
+          <label class="opt"><input type="radio" name="q3" value="B"> B) By using a deterministic FIFO system with a cryptographic sort key</label>
+          <label class="opt"><input type="radio" name="q3" value="C"> C) By delegating order control to centralized servers</label>
+          <label class="opt"><input type="radio" name="q3" value="D"> D) By requiring a special staking token for matching</label>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="question" data-question="4" data-correct="C">
+        <div class="q-title">4. How does BULK benefit the Solana network?</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q4" value="A"> A) It moves trading away from Solana</label>
+          <label class="opt"><input type="radio" name="q4" value="B"> B) It bridges assets to external chains</label>
+          <label class="opt"><input type="radio" name="q4" value="C"> C) It shares 30% of taker fees with Bulk-agave validators</label>
+          <label class="opt"><input type="radio" name="q4" value="D"> D) It replaces Solana’s validators with its own nodes</label>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="question" data-question="5" data-correct="C">
+        <div class="q-title">5. What is BULK’s stance on censorship resistance?</div>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q5" value="A"> A) It depends on centralized authorities to manage orders</label>
+          <label class="opt"><input type="radio" name="q5" value="B"> B) It allows manual approval of all trades</label>
+          <label class="opt"><input type="radio" name="q5" value="C"> C) It uses a leaderless, decentralized validator network to prevent censorship</label>
+          <label class="opt"><input type="radio" name="q5" value="D"> D) It filters trades to maintain system speed</label>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="submit">Submit Answers</button>
+        <button class="secondary" id="reveal">Reveal Answers</button>
+        <button class="secondary" id="reset">Reset</button>
+      </div>
+
+      <div id="resultArea" class="result" style="display:none"></div>
+
+      <div class="answer-key" id="answerKey" style="display:none">
+        <strong>Answer Key:</strong>
+        <ol>
+          <li>1 — B</li>
+          <li>2 — C</li>
+          <li>3 — B</li>
+          <li>4 — C</li>
+          <li>5 — C</li>
+        </ol>
+      </div>
+
+      <footer>
+        <div>Source: BULK article provided by user. Correct answers are shown in the key above.</div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    const submitBtn = document.getElementById('submit');
+    const revealBtn = document.getElementById('reveal');
+    const resetBtn = document.getElementById('reset');
+    const resultArea = document.getElementById('resultArea');
+    const answerKey = document.getElementById('answerKey');
+
+    function grade() {
+      const questions = document.querySelectorAll('.question');
+      let total = questions.length;
+      let correct = 0;
+      let unanswered = 0;
+      questions.forEach(q => {
+        const qnum = q.getAttribute('data-question');
+        const correctOpt = q.getAttribute('data-correct');
+        const sel = document.querySelector('input[name="q'+qnum+'"]:checked');
+        if(!sel){ unanswered++; q.classList.remove('answered'); }
+        else{
+          q.classList.add('answered');
+          if(sel.value === correctOpt) correct++;
+        }
+      });
+
+      return {total, correct, unanswered};
+    }
+
+    submitBtn.addEventListener('click', ()=>{
+      const {total, correct, unanswered} = grade();
+      resultArea.style.display = 'block';
+      answerKey.style.display = 'block';
+      resultArea.innerHTML = `<div><strong>Score:</strong> ${correct} / ${total}</div>` +
+        (unanswered? `<div style="margin-top:6px; color:var(--muted)">${unanswered} unanswered question(s). Please answer all to get full score.</div>` : '');
+      // highlight
+      document.querySelectorAll('.question').forEach(q=>{
+        const qnum = q.getAttribute('data-question');
+        const correctOpt = q.getAttribute('data-correct');
+        q.querySelectorAll('input[type=radio]').forEach(r => {
+          r.parentElement.style.opacity = '1';
+          r.parentElement.style.border = 'none';
+          if(r.value === correctOpt) r.parentElement.style.outline = '2px solid rgba(0,209,178,0.12)';
+          const sel = document.querySelector('input[name="q'+qnum+'"]:checked');
+          if(sel && sel.value !== correctOpt && r.value === sel.value) {
+            r.parentElement.style.outline = '2px solid rgba(255,154,162,0.12)';
+          }
+        })
+      })
+    });
+
+    revealBtn.addEventListener('click', ()=>{
+      answerKey.style.display = (answerKey.style.display === 'block') ? 'none' : 'block';
+      resultArea.style.display = 'block';
+      const {total, correct, unanswered} = grade();
+      resultArea.innerHTML = `<div><strong>Score:</strong> ${correct} / ${total}</div>`;
+    });
+
+    resetBtn.addEventListener('click', ()=>{
+      document.querySelectorAll('input[type=radio]').forEach(r=>r.checked=false);
+      resultArea.style.display='none';
+      answerKey.style.display='none';
+      document.querySelectorAll('.question').forEach(q=>{
+        q.classList.remove('answered');
+        q.querySelectorAll('label.opt').forEach(l=>{ l.style.outline='none'; l.style.opacity=''; });
+      })
+    })
+  </script>
+</body>
+</html>
